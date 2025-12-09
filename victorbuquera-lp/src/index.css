@@ -1,0 +1,368 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles for Victor Buquera Photography */
+:root {
+  --rich-black: #050505;
+  --pure-white: #FFFFFF;
+  --platinum: #E0E0E0;
+  --dark-gray: #121212;
+  --border-gray: #333333;
+  --hover-gray: #D1D1D1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--rich-black);
+  color: var(--pure-white);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  color: var(--pure-white);
+}
+
+/* Custom utility classes */
+.tracking-wide-custom {
+  letter-spacing: 0.1em;
+}
+
+/* Font families */
+.font-playfair {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* WhatsApp Button Animation */
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s ease-in-out infinite;
+}
+
+/* Premium WhatsApp Button Animation */
+@keyframes premium-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(37, 211, 102, 0.4),
+                0 0 40px rgba(37, 211, 102, 0.2),
+                0 0 60px rgba(37, 211, 102, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(37, 211, 102, 0.6),
+                0 0 60px rgba(37, 211, 102, 0.4),
+                0 0 90px rgba(37, 211, 102, 0.2);
+  }
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+.whatsapp-premium {
+  position: relative;
+  background-size: 200% 200%;
+  animation: premium-glow 3s ease-in-out infinite,
+             gradient-shift 4s ease infinite;
+  overflow: hidden;
+}
+
+.whatsapp-premium::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.whatsapp-premium:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.whatsapp-premium::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.whatsapp-premium > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Premium WhatsApp Button - Design Refinado e Persuasivo */
+@keyframes button-glow {
+  0%, 100% {
+    box-shadow: 0 4px 25px rgba(37, 211, 102, 0.5),
+                0 0 50px rgba(37, 211, 102, 0.3),
+                0 0 80px rgba(37, 211, 102, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  }
+  50% {
+    box-shadow: 0 6px 35px rgba(37, 211, 102, 0.7),
+                0 0 70px rgba(37, 211, 102, 0.4),
+                0 0 100px rgba(37, 211, 102, 0.25),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  }
+}
+
+@keyframes gradient-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes icon-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes shine-sweep {
+  0% {
+    transform: translateX(-100%) skewX(-15deg);
+  }
+  100% {
+    transform: translateX(200%) skewX(-15deg);
+  }
+}
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce-down {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
+}
+
+.animate-bounce-down {
+  animation: bounce-down 2s ease-in-out infinite;
+}
+
+.whatsapp-premium-btn {
+  position: relative;
+  background: linear-gradient(135deg, #25D366 0%, #20BA5A 50%, #1DA851 100%);
+  background-size: 200% 200%;
+  animation: button-glow 3s ease-in-out infinite,
+             gradient-flow 4s ease infinite;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.whatsapp-premium-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.25),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.whatsapp-premium-btn:hover::before {
+  left: 100%;
+  animation: shine-sweep 0.6s ease-out;
+}
+
+.whatsapp-premium-btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), transparent);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.whatsapp-premium-btn:hover::after {
+  opacity: 1;
+}
+
+.whatsapp-premium-btn:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 45px rgba(37, 211, 102, 0.8),
+              0 0 90px rgba(37, 211, 102, 0.5),
+              0 0 120px rgba(37, 211, 102, 0.3),
+              inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  animation: button-glow 1.5s ease-in-out infinite,
+             gradient-flow 3s ease infinite;
+}
+
+.whatsapp-premium-btn:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: 0 2px 10px rgba(37, 211, 102, 0.4);
+}
+
+.whatsapp-premium-btn .btn-icon {
+  position: relative;
+  z-index: 2;
+  animation: icon-float 2.5s ease-in-out infinite;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-premium-btn:hover .btn-icon {
+  animation: icon-float 1.5s ease-in-out infinite;
+  transform: scale(1.1);
+}
+
+.whatsapp-premium-btn .btn-text {
+  position: relative;
+  z-index: 2;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.whatsapp-premium-btn:hover .btn-text {
+  letter-spacing: 0.15em;
+}
+
+.whatsapp-premium-btn > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Scroll horizontal para mobile - esconder scrollbar */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari and Opera */
+}
+
+/* Melhorias de UX Mobile */
+.touch-manipulation {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Smooth scroll melhorado */
+html {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Melhorar área de toque em mobile */
+@media (max-width: 768px) {
+  button,
+  a[role="button"],
+  .cursor-pointer {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Reduzir animações em mobile para melhor performance */
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
