@@ -14,7 +14,7 @@ const Hero = () => {
           <div className="w-full h-full relative">
             {/* Imagem Mobile */}
             <img
-              src="/fotos/victorbuquera-heromobile2.png" 
+              src="/fotos/victor-mobilehero2.jpg" 
               alt="Victor Buquera - Fotógrafo Profissional"
               className="md:hidden w-full h-full object-cover object-right opacity-30 grayscale contrast-125"
             />
