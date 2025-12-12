@@ -12,7 +12,7 @@ const About = () => {
           <div className="order-1 md:order-1">
             <div className="aspect-[3/4] bg-[#121212] border border-[#333333] overflow-hidden">
               <img
-                src="/fotos/victordeblazer1.png"
+                src="/fotos/victor-mobilehero2.jpg"
                 alt="Victor Buquera - Fotógrafo Profissional"
                 className="w-full h-full object-cover object-[center_bottom] grayscale"
               />
